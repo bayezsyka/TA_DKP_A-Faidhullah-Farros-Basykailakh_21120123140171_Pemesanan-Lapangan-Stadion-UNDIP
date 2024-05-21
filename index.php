@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stadion Universitas Diponegoro</title>
+    <title>Stadion Universitas Dipnegoro</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
