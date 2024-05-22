@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Pemesanan Lapangan Futsal</title>
-    <link rel="stylesheet" href="stylehasilfutsal.css">
+    <link rel="stylesheet" href='css/stylehasilfutsal.css'>
 </head>
 <body>
     <h2>Hasil Pemesanan Lapangan Futsal</h2>
     <?php
-// Mendapatkan data dari form
+// HASIL INPUT FORM PAGE SEBELUMNYA
 $nama = $_POST['nama'];
 $telepon = $_POST['telepon'];
 $tanggal = $_POST['tanggal'];
@@ -54,6 +54,13 @@ echo "<p>Jam Mulai: $jamMulai</p>";
 echo "<p>Jam Selesai: $jamSelesai</p>";
 echo "<p>Lapangan: $jenisLapangan</p>";
 echo "<p>Fasilitas Tambahan: " . implode(", ", $fasilitasTambahan) . "</p>";
+
+if (!empty($fasilitasTambahan)) {
+    echo "<p>Fasilitas Tambahan: " . implode(", ", $fasilitasTambahan) . "</p>";
+} else {
+    echo "<p>Fasilitas Tambahan: Tidak ada fasilitas tambahan</p>";
+}
+
 echo "<p>Durasi Sewa: $durasiSewa jam</p>";
 echo "<p>Harga Sewa: Rp " . number_format($hargaSewa, 0, ',', '.') . "</p>";
 echo "<p>Harga Fasilitas Tambahan: Rp " . number_format($hargaFasilitas, 0, ',', '.') . "</p>";

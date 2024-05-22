@@ -4,52 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Pemesanan Lapangan Futsal</title>
-    <link rel="stylesheet" href="stylefutsal.css">
-    <script>
-        function validateForm() {
-            const tanggal = document.getElementById('tanggal').value;
-            const today = new Date().toISOString().split('T')[0];
-            if (tanggal < today) {
-                alert('Tanggal sudah lewat/kadaluarsa');
-                return false;
-            }
-            return true;
-        }
-
-        function clearForm() {
-            document.getElementById('myForm').reset();
-            document.getElementById('totalHarga').innerText = 'Rp 0';
-        }
-
-        function setFullHour(inputId) {
-            const input = document.getElementById(inputId);
-            input.addEventListener('input', () => {
-                const value = input.value;
-                if (value) {
-                    const [hour] = value.split(':');
-                    input.value = `${hour}:00`;
-                }
-            });
-        }
-
-        window.onload = () => {
-            setFullHour('jam_mulai');
-            setFullHour('jam_selesai');
-        };
-    </script>
+    <link rel="stylesheet" href="css/stylefutsal.css">
 </head>
 <body>
-    <h2>Form Pemesanan Lapangan Futsal</h2>
+    <h2>Form Pemesanan Lapangan Futsal</h2>  <!-- modul 5 -->
     <form id="myForm" action="hasil_futsal.php" method="post" onsubmit="return validateForm()">
         <h3>Informasi Pemesan:</h3>
         <label for="nama">Nama Lengkap:</label><br>
-        <input type="text" id="nama" name="nama" pattern="[A-Za-z\s]+" title="Nama hanya boleh mengandung huruf" required><br>
+        <input type="text" id="nama" name="nama" pattern="[A-Za-z\s.]+" title="Nama hanya boleh mengandung huruf" required><br>
         
         <label for="telepon">Nomor Telepon:</label><br>
         <input type="text" id="telepon" name="telepon" pattern="\d{10,13}" title="Nomor telepon harus terdiri dari 10 hingga 13 digit angka" required><br>
         <small>Hanya bisa isi dengan angka</small><br>
         
-        <h3>Detail Pemesanan:</h3>
+        <h3>Detail Pemesanan:</h3> 
         <label for="tanggal">Tanggal Pemesanan:</label><br>
         <input type="date" id="tanggal" name="tanggal" required><br>
         
@@ -72,5 +40,39 @@
         <button type="button" onclick="history.back()">Kembali</button>
         <button type="button" onclick="clearForm()">Clear</button>
     </form>
+
+    <script>
+        function validateForm() {
+            const tanggal = document.getElementById('tanggal').value;
+            const today = new Date().toISOString().split('T')[0];
+            if (tanggal < today) {
+                alert('Tanggal sudah lewat/kadaluarsa');
+                return false;
+            }
+            return true;
+        }
+
+        function clearForm() { // Comment Modul 1 dan 4
+            document.getElementById('myForm').reset(); // Modul 6
+            document.getElementById('totalHarga').innerText = 'Rp 0';
+        }
+
+        function setFullHour(inputId) {
+            const input = document.getElementById(inputId);
+            input.addEventListener('input', () => {
+                const value = input.value;
+                if (value) { // Modul 2
+                    const [hour] = value.split(':');
+                    input.value = `${hour}:00`;
+                }
+            });
+        }
+
+        window.onload = () => {
+            setFullHour('jam_mulai');
+            setFullHour('jam_selesai');
+        };
+    </script>
+
 </body>
 </html>
