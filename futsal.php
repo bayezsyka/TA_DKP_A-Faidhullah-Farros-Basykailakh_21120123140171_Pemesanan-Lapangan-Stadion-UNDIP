@@ -6,6 +6,7 @@
     <title>Form Pemesanan Lapangan Futsal</title>
     <link rel="stylesheet" href="css/stylefutsal.css">
 </head>
+    <?php include "index.php" ?>
 <body>
     <h2>Form Pemesanan Lapangan Futsal</h2>  <!-- modul 5 -->
     <form id="myForm" action="hasil_futsal.php" method="post" onsubmit="return validateForm()">

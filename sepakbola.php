@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/stylefutsal.css">
 </head>
 <body>
-    <h2>Form Pemesanan Lapangan Futsal</h2> <!-- modul 5 -->
+    <h2>Form Pemesanan Lapangan Sepak Bola</h2> <!-- modul 5 -->
     <form id="myForm" action="sepakbolahasil.php" method="post" onsubmit="return validateForm()">
         <h3>Informasi Pemesan:</h3>
         <label for="nama">Nama Lengkap:</label><br>
@@ -27,10 +27,6 @@
         <label for="jam_selesai">Jam Selesai:</label><br>
         <input type="time" id="jam_selesai" name="jam_selesai" required><br>
         <em>*Pilih jam nya saja<br></em>
-        
-        <h3>Pilihan Lapangan:</h3>
-        <label><input type="radio" name="jenis_lapangan" value="A" required> Lapangan A</label><br>
-        <label><input type="radio" name="jenis_lapangan" value="B" required> Lapangan B</label><br>
         
         <h3>Fasilitas Tambahan:</h3>
         <label><input type="checkbox" name="fasilitas_tambahan[]" value="Wasit"> Wasit</label><br>

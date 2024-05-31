@@ -15,7 +15,6 @@ $telepon = $_POST['telepon'];
 $tanggal = $_POST['tanggal'];
 $jamMulai = $_POST['jam_mulai'];
 $jamSelesai = $_POST['jam_selesai'];
-$jenisLapangan = $_POST['jenis_lapangan'];
 $fasilitasTambahan = isset($_POST['fasilitas_tambahan']) ? $_POST['fasilitas_tambahan'] : [];
 
 // Fungsi untuk mengonversi waktu dalam format 24 jam ke menit
@@ -52,7 +51,6 @@ echo "<p>Nomor Telepon: $telepon</p>";
 echo "<p>Tanggal Pemesanan: $tanggal</p>";
 echo "<p>Jam Mulai: $jamMulai</p>";
 echo "<p>Jam Selesai: $jamSelesai</p>";
-echo "<p>Lapangan: $jenisLapangan</p>";
 
 if (!empty($fasilitasTambahan)) {
     echo "<p>Fasilitas Tambahan: " . implode(", ", $fasilitasTambahan) . "</p>";
